@@ -7,14 +7,11 @@ import (
 )
 
 func main() {
-	defer func() {
-		err := recover()
-		if err != nil {
-			fmt.Print(0)
-			return
-		}
-	}()
-	count_words := len(strings.Split(os.Args[1], " "))
-	fmt.Print(count_words)
+	if os.Args[1] == "" {
+		fmt.Print(0)
+	} else {
+		count_words := len(strings.Split(os.Args[1], " "))
+		fmt.Print(count_words)
+	}
 
 }
